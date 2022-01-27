@@ -6,21 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Bree Serif' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header id="TOP">
-        <span>REEN</span>
-        <nav>
-            <a href="#HOME">HOME</a>
-            <a href="#FEATURES">FEATURES</a>
-            <a href="#PORTFOLIO">PORTFOLIO</a>
-            <a href="#BLOG">BLOG</a>
-            <a href="#TEAM">OUR TEAM</a>
-            <a href="#FEEDBACKS">FEEDBACKS</a>
-            <a href="#CONTACT">CONTACT</a>
-            <a href="#FOOTER">FOOTER</a>
-        </nav>
+<body onresize="check_screen()">
+    <header>
+        <section>
+            <div>
+                <span><i class="fa fa-brush"></i> <span class="letter">R</span>EEN</span>
+                <button class="fa fa-bars nav-btn" onclick="toggle()"></button>
+            </div>
+            <nav>
+                <a href="#HOME" onclick="toggle()">HOME</a>
+                <a href="#FEATURES" onclick="toggle()">FEATURES</a>
+                <a href="#PORTFOLIO" onclick="toggle()">PORTFOLIO</a>
+                <a href="#BLOG" onclick="toggle()">BLOG</a>
+                <a href="#TEAM" onclick="toggle()">OUR TEAM</a>
+                <a href="#FEEDBACKS" onclick="toggle()">FEEDBACKS</a>
+                <a href="#CONTACT" onclick="toggle()">CONTACT</a>
+                <a href="#FOOTER" onclick="toggle()">FOOTER</a>
+            </nav>
+        </section>
     </header>
     <main>
         <section class="img_container" id="HOME">
@@ -36,21 +44,21 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non vero possimus hic necessitatibus ea et dicta, amet reiciendis obcaecati minus molestiae debitis nisi est veniam. Quis mollitia dicta ipsum quisquam.</p>
         </section>
         <section class="in_row">
-            <section class="col">
+            <section class="col bordered">
                 <i class="fa fa-heart"></i>
                 <section>
                     <h6>Passion</h6>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore suscipit esse maxime totam debitis.</p>
                 </section>
             </section>
-            <section class="col">
+            <section class="col bordered">
                 <i class="fa fa-lightbulb"></i>
                 <section>
                     <h6>Creativity</h6>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore suscipit esse maxime totam debitis.</p>
                 </section>
             </section>
-            <section class="col">
+            <section class="col bordered">
                 <i class="fa fa-star"></i>
                 <section>
                     <h6>Quality</h6>
@@ -110,19 +118,19 @@
         <section class="in_row">
             <section class="col projects">
                 <img src="./Ahmed Saber.jpg" class="me">
-                <h3>Ahmed Saber</h3>
+                <h3>Ahmed Saber 1</h3>
                 <p>Frontend Web Developer</p>
                 <button class="btn">MORE INFO</button>
             </section>
             <section class="col projects">
                 <img src="./Ahmed Saber.jpg" class="me">
-                <h3>Ahmed Saber</h3>
+                <h3>Ahmed Saber 2</h3>
                 <p>Backend Web Developer</p>
                 <button class="btn">MORE INFO</button>
             </section>
             <section class="col projects">
                 <img src="./Ahmed Saber.jpg" class="me">
-                <h3>Ahmed Saber</h3>
+                <h3>Ahmed Saber 3</h3>
                 <p>Mobile App Developer</p>
                 <button class="btn">MORE INFO</button>
             </section>
@@ -133,10 +141,10 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non vero possimus hic necessitatibus ea et dicta, amet reiciendis obcaecati minus molestiae debitis nisi est veniam. Quis mollitia dicta ipsum quisquam.</p>
         </section>
         <section class="in_row">
-            <section class="col projects">
+            <section class="col projects bordered">
                 <section class="reviewer_data">
                     <div>
-                        <img src="./Ahmed Saber.jpg" class="me">
+                        <img src="./Ahmed Saber.jpg">
                     </div>
                     <div>
                         <h3>Ahmed Saber 1</h3>
@@ -146,10 +154,10 @@
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea aperiam distinctio quasi, voluptate id nostrum possimus aliquid unde reprehenderit fuga architecto? Quam odio recusandae adipisci doloremque cum mollitia nisi accusamus.</p>
                 </section>
             </section>
-            <section class="col projects">
+            <section class="col projects bordered">
                 <section class="reviewer_data">
                     <div>
-                        <img src="./Ahmed Saber.jpg" class="me">
+                        <img src="./Ahmed Saber.jpg">
                     </div>
                     <div>
                         <h3>Ahmed Saber 2</h3>
@@ -159,10 +167,10 @@
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea aperiam distinctio quasi, voluptate id nostrum possimus aliquid unde reprehenderit fuga architecto? Quam odio recusandae adipisci doloremque cum mollitia nisi accusamus.</p>
                 </section>
             </section>
-            <section class="col projects">
+            <section class="col projects bordered">
                 <section class="reviewer_data">
                     <div>
-                        <img src="./Ahmed Saber.jpg" class="me">
+                        <img src="./Ahmed Saber.jpg">
                     </div>
                     <div>
                         <h3>Ahmed Saber 3</h3>
@@ -181,7 +189,7 @@
                 <input type="text" placeholder="Full Name">
                 <input type="email" placeholder="Email">
                 <textarea placeholder="Message"></textarea>
-                <button class="btn">Send</button>
+                <button class="btn"><i class="fa fa-paper-plane"></i> Send</button>
             </section>
         </section>
     </main>
@@ -194,7 +202,11 @@
         <a href='https://www.freepik.com/vectors/school' target="_blank" class="footer">School vector created by pikisuperstar - www.freepik.com</a>
     </footer>
     
-    <a class="to_top fa fa-arrow-up" href="#TOP"></a>
+    <div class="top">
+        <a class="to_top fa fa-arrow-up" href="#HOME"></a>
+    </div>
+    
     <script src="https://kit.fontawesome.com/282bcf757e.js" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
 </body>
 </html>

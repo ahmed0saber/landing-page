@@ -3,10 +3,19 @@
     padding: 0;
     font-family: "Bree Serif", sans-serif;
 }
+html {
+    scroll-behavior: smooth;
+}
 body{
     background-color: #fbfbfb;
 }
 header{
+    position: fixed;
+    z-index: 11;
+    width: 100%;
+    background-color: #fbfbfb;
+}
+header section{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -15,32 +24,53 @@ header{
     border-bottom: 1px solid #12121224;
     box-shadow: 0px 0px 3px 1px #12121237;
 }
-header span{
+header section div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+header section div span{
     padding: 10px;
-    font-size: 28px;
-    color: #121212;
+    font-size: 26px;
+    color: #089499;
     font-weight: bold;
     letter-spacing: 1px;
 }
-header nav{
+header section div span .letter{
+    font-family: "Pacifico", "Bree Serif", sans-serif;
+    padding: 0px 3px 0px 0px;
+}
+header section nav{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-header nav a{
+header section nav a{
     margin: 18px 8px;
     padding: 2px 2px;
     font-size: 14px;
     text-decoration: none;
-    color: #121212;
+    color: #041214;
     border-bottom: 2px solid transparent;
     letter-spacing: 0.6px;
     transition-duration: 0.3s;
+    width: fit-content;
 }
-header nav a:hover{
-    border-bottom: 2px solid #048b53;
-    color: #048b53;
-    font-weight: bold;
+header section nav a:hover{
+    border-bottom: 2px solid #089499;
+    color: #089499;
+}
+header section div button.nav-btn{
+    padding: 0px 20px;
+    font-size: 28px;
+    border: none;
+    background: transparent;
+    display: none;
+    transition-duration: 0.3s;
+}
+header section div button.nav-btn:hover{
+    color: #089499;
 }
 .img_container{
     background: #121212 url(./cover.jpg) no-repeat top left;
@@ -49,6 +79,7 @@ header nav a:hover{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 50px 0px 0px 0px;
 }
 .img_container::before{
     content: "";
@@ -82,7 +113,7 @@ header nav a:hover{
 }
 .img_container div button{
     padding: 10px 30px;
-    background-color: #10ac6a;
+    background-color: #089499;
     position: relative;
     z-index: 10;
     border: 2px solid #12121225;
@@ -94,19 +125,20 @@ header nav a:hover{
 }
 .img_container div button:hover{
     cursor: pointer;
-    color: #2cc787;
+    color: #0ea6ac;
     background: transparent;
-    border: 2px solid #2cc787;
+    border: 2px solid #0ea6ac;
 }
 .text_container{
-    padding: 60px 10px 10px 10px;
+    padding: 60px 10px 0px 10px;
     text-align: center;
 }
 .text_container h2{
     color: #121212;
-    padding: 10px 10px 18px 10px;
+    padding: 8px;
     font-size: 25px;
     letter-spacing: 1.1px;
+    font-family: "Architects Daughter", "Bree Serif", sans-serif;
 }
 .text_container p{
     color: #212121;
@@ -131,7 +163,7 @@ header nav a:hover{
     border: 1px solid transparent;
     border-radius: 4px;
 }
-.in_row .col:hover{
+.in_row .col.bordered:hover{
     border: 1px solid #12121212;
     box-shadow: 0px 0px 3px 1px #12121221;
 }
@@ -162,6 +194,12 @@ header nav a:hover{
 }
 .project{
     width: 100%;
+    filter: grayscale(50%);
+    border-radius: 3px;
+    transition-duration: 0.3s;
+}
+.project:hover{
+    filter: grayscale(0%);
 }
 .in_row .col.projects{
     display: block;
@@ -189,6 +227,10 @@ header nav a:hover{
 .me{
     width: 60%;
     border-radius: 50%;
+    transition-duration: 0.3s;
+}
+.me:hover{
+    border-radius: 40% 40% 10% 10%;
 }
 .reviewer_data{
     background-color: #12121212;
@@ -196,9 +238,11 @@ header nav a:hover{
     text-align: left;
     padding: 8px;
     height: 50px;
+    border-left: 3px solid #0ea6ac;
 }
 .reviewer_data img{
     width: 50px;
+    border-radius: 50%;
 }
 .reviewer_data h3{
     margin: -42px 0px 0px 60px;
@@ -211,7 +255,7 @@ header nav a:hover{
 .form input, .form textarea{
     width: 100%;
     box-sizing: border-box;
-    margin: 5px 0px;
+    margin: 10px 0px 0px 0px;
     border: 1px solid #12121212;
     border-radius: 4px;
     padding: 10px;
@@ -221,13 +265,13 @@ header nav a:hover{
     height: 180px;
 }
 .form .btn{
-    padding: 8px 26px;
+    padding: 8px 40px;
     font-size: 16px;
-    background-color: #10ac6a;
+    background-color: #10a7ac;
 }
 .form .btn:hover{
-    border-color: #2cc787;
-    color: #2cc787;
+    border-color: #10a7ac;
+    color: #10a7ac;
     background-color: #10ac6a00;
 }
 #FOOTER{
@@ -245,18 +289,25 @@ header nav a:hover{
     max-width: 500px;
     text-align: left;
 }
-.to_top{
-    font-size: 30px;
+.top{
     position: fixed;
     bottom: 30px;
     right: 20px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border: 3px solid #121212b2;
-    padding: 8px;
     border-radius: 50%;
-    color: #121212b2;
     background-color: #f2f2f2b2;
-    text-decoration: none;
     animation: to-up 1.8s infinite alternate;
+}
+.to_top{
+    font-size: 30px;
+    text-decoration: none;
+    color: #121212b2;
 }
 @keyframes to-up {
     0%{
@@ -267,5 +318,38 @@ header nav a:hover{
     }
     100%{
         bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    header section div{
+        justify-content: space-between;
+        width: 100%;
+    }
+    header section nav{
+        display: none;
+        width: 100%;
+    }
+    header section nav a{
+        display: block;
+        font-size: 16px;
+    }
+    header section div button.nav-btn{
+        display: inline-block;
+    }
+}
+@media only screen and (min-width: 701px){
+    header section div{
+        width: fit-content;
+    }
+    header section nav{
+        display: block;
+        width: fit-content;
+    }
+    header section nav a{
+        display: inline-block;
+    }
+    header section div button.nav-btn{
+        display: none;
     }
 }
