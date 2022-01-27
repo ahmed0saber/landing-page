@@ -205,6 +205,11 @@ header section div button.nav-btn:hover{
     display: block;
     text-align: center;
 }
+.in_row .col.projects.post{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .btn{
     padding: 8px 24px;
     margin: 10px 0px 0px 0px;
